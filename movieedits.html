@@ -1,0 +1,322 @@
+
+<html>
+<head>
+<title>MUJO | HOME | ADMIN</title>
+<meta charset="utf-8">
+<!-- <script src="static/js/others/adminedits.js" ></script> -->
+<script src="static/js/others/main.js" ></script>
+<link rel="stylesheet" type="text/css" href="static/css/main.css" >
+<link rel="stylesheet" type="text/css" href="static/css/w3.css">
+</head>
+<body class="main_body" onload=" Hide_All_Admin_Divs ()">
+<div id="main-header">
+        <div  id= "Navigetion" class="header">
+                <!-- ======= CLOSE ====== -->
+            <span href="javascript:void(0)" class="closebtn" onclick="closeNavi()"><label class="close-navi-span"> &times;</label></span><!-- closs the navi -->
+            <div id="our-avenues-menu-label-div">
+                <label class="our-avenues-label" onclick="Load_index ()" > Home</label>
+            </div><br>
+
+            <div id="our-avenues-menu-label-div"> 
+				<label class="our-avenues-label" > Movies</label>
+            </div><br>
+            
+                <div id="menu-items-div">
+                    <center>
+                        <a><label onclick="Load_a_view ()">Aa</label></a>
+                        <a><label onclick="Load_b_view ()">Bb</label></a>
+                        <a><label onclick="Load_c_view ()">Cc</label></a>
+                    </center>
+                </div>
+                <br>
+                <div id="our-avenues-menu-label-div">
+                    <label class="our-avenues-label" onclick="Load_developer ()" > Developer</label>
+                </div><br>
+        </div>
+        <div id="NaviDiv">
+            <label class="kone-menu-label" onclick="openMenus()">&#9776;</label>
+            <label class="kone-label">Mujo </label>
+        </div>
+<script>
+function openMenus(){document.getElementById("Navigetion").style.width = "240px"}
+function closeNavi (){document.getElementById("Navigetion").style.width = "0"}
+</script>
+
+</div> <!-- main-header-->
+<div id="main-body" > <!-- Begin main-body div -->
+
+    <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+    <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+    <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+    <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+    <br>
+    <center><button class="mujo-main-movies-btns fontstyles" onclick="Show_add_movies_panel_div ()">Add :: Movie</button></center>
+    <div id="add-movies-panel-div"><br>
+        <!-- ============================================================= -->
+        <!-- ============================================================= -->
+        <!-- ============================================================= -->
+        <!-- ============================================================= -->
+        <center><button class="mujo-admin-btn fontstyles" onclick="Show_add_a_movies_div_id ()">A</button></center>
+        <div id="add-a-movies-div-id">
+            <center><br>
+            <form class="order-form" method="POST" enctype="multipart/form-data" action="http://127.0.0.1:6060/create_a_movie">
+                <br>
+                <label>Name</label>
+                <input required class="form_input" name="name" autocomplete="off" type="text"><br>
+
+                <label>Price</label>
+                <input required class="form_input" name="price" autocomplete="off" type="text"><br>
+
+                <label>Picture</label><br>
+                <input required  type="file" name="file"><br><br>
+                <label>Password</label>
+                <input required class="form_input" placeholder="Password" name="pwd" autocomplete="off" type="password"><br>
+
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+            </center>
+        </div><br>
+
+        <!-- ============================================================= -->
+        <!-- ============================================================= -->
+        <!-- ============================================================= -->
+        <!-- ============================================================= -->
+        <center><button class="mujo-admin-btn fontstyles" onclick="Show_add_b_movies_div_id ()">B</button></center>
+        <div id="add-b-movies-div-id">
+            <center><br>
+            <form class="order-form" method="POST" enctype="multipart/form-data" action="http://127.0.0.1:6060/create_b_movie">
+                <br>
+                <label>Name</label>
+                <input required class="form_input" name="name" autocomplete="off" type="text"><br>
+
+                <label>Price</label>
+                <input required class="form_input" name="price" autocomplete="off" type="text"><br>
+
+                <label>Picture</label><br>
+                <input required  type="file" name="file"><br><br>
+                <label>Password</label>
+                <input required class="form_input" placeholder="Password" name="pwd" autocomplete="off" type="password"><br>
+
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+            </center>
+        </div><br>        
+        <!-- ============================================================= -->
+        <!-- ============================================================= -->
+        <!-- ============================================================= -->
+        <!-- ============================================================= -->
+        <center><button class="mujo-admin-btn fontstyles" onclick="Show_add_c_movies_div_id ()">C</button></center>
+        <div id="add-c-movies-div-id">
+            <center><br>
+            <form class="order-form" method="POST" enctype="multipart/form-data" action="http://127.0.0.1:6060/create_c_movie">
+                <br>
+                <label>Name</label>
+                <input required class="form_input" name="name" autocomplete="off" type="text"><br>
+
+                <label>Price</label>
+                <input required class="form_input" name="price" autocomplete="off" type="text"><br>
+
+                <label>Picture</label><br>
+                <input required  type="file" name="file"><br><br>
+                <label>Password</label>
+                <input required class="form_input" placeholder="Password" name="pwd" autocomplete="off" type="password"><br>
+
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+            </center>
+        </div><br>
+    </div>
+
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+<br>
+<center><button  class="mujo-main-movies-btns fontstyles" onclick="Show_edit_movies_panel_div ()">Edit :: Prices</button></center>
+<div id="edit-movies-panel-div"><br>
+
+    <!-- ========================================================================== -->
+    <!-- ========================================================================== -->
+    <!-- ========================================================================== -->
+    <!-- ========================================================================== -->
+    <!-- ========================================================================== -->
+    <center><button class="mujo-admin-btn fontstyles" onclick="Show_edit_a_movies_div_id ()">A</button></center>
+    <div id="edit-a-movies-div-id"><br>
+    <center><button onclick="Fetch_All_Avenue_Edits ('edit_chips_menu_endpoint','chips-tbody','chips-tbody-div')" class="agency-show-btn entries_page_fonts"  >Show</button> </center>
+    <div id="chips-tbody-div">
+        <table class=" w3-bordered user-scrolling-table-admin">
+            <center><tbody id="chips-tbody"></tbody></center>
+        </table>
+    </div>
+        <center><br>
+        <form class="order-form" method="POST" enctype="multipart/form-data" action="http://127.0.0.1:6060/update_chips_menu">
+            <br>
+            <label>Key</label>
+            <input required class="form_input" name="key" autocomplete="off" type="text"><br>
+
+            <label>Price</label>
+            <input required class="form_input" name="price" autocomplete="off" type="text"><br>
+            <label>Password</label>
+            <input required class="form_input" placeholder="Password" name="pwd" autocomplete="off" type="password"><br>
+
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+        </center>
+    </div><br>
+
+    <!-- ========================================================================== -->
+    <!-- ========================================================================== -->
+    <!-- ========================================================================== -->
+    <!-- ========================================================================== -->
+    <!-- ========================================================================== -->
+    <center><button class="mujo-admin-btn fontstyles" onclick="Show_edit_b_movies_div_id ()">B</button></center>
+    <div id="edit-b-movies-div-id"><br>
+    <center><button onclick="Fetch_All_Avenue_Edits ('edit_chips_menu_endpoint','chips-tbody','chips-tbody-div')" class="agency-show-btn entries_page_fonts"  >Show</button> </center>
+    <div id="chips-tbody-div">
+        <table class=" w3-bordered user-scrolling-table-admin">
+            <center><tbody id="chips-tbody"></tbody></center>
+        </table>
+    </div>
+        <center><br>
+        <form class="order-form" method="POST" enctype="multipart/form-data" action="http://127.0.0.1:6060/update_chips_menu">
+            <br>
+            <label>Key</label>
+            <input required class="form_input" name="key" autocomplete="off" type="text"><br>
+
+            <label>Price</label>
+            <input required class="form_input" name="price" autocomplete="off" type="text"><br>
+            <label>Password</label>
+            <input required class="form_input" placeholder="Password" name="pwd" autocomplete="off" type="password"><br>
+
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+        </center>
+    </div><br>
+    <!-- ========================================================================== -->
+    <!-- ========================================================================== -->
+    <!-- ========================================================================== -->
+    <!-- ========================================================================== -->
+    <!-- ========================================================================== -->
+    <center><button class="mujo-admin-btn fontstyles" onclick="Show_edit_c_movies_div_id ()">C</button></center>
+    <div id="edit-c-movies-div-id"><br>
+    <center><button onclick="Fetch_All_Avenue_Edits ('edit_chips_menu_endpoint','chips-tbody','chips-tbody-div')" class="agency-show-btn entries_page_fonts"  >Show</button> </center>
+    <div id="chips-tbody-div">
+        <table class=" w3-bordered user-scrolling-table-admin">
+            <center><tbody id="chips-tbody"></tbody></center>
+        </table>
+    </div>
+        <center><br>
+        <form class="order-form" method="POST" enctype="multipart/form-data" action="http://127.0.0.1:6060/update_chips_menu">
+            <br>
+            <label>Key</label>
+            <input required class="form_input" name="key" autocomplete="off" type="text"><br>
+
+            <label>Price</label>
+            <input required class="form_input" name="price" autocomplete="off" type="text"><br>
+            <label>Password</label>
+            <input required class="form_input" placeholder="Password" name="pwd" autocomplete="off" type="password"><br>
+
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+        </center>
+    </div><br>
+
+
+</div>
+
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+<br>
+<center><button class="mujo-main-movies-btns fontstyles" onclick="Show_delete_movies_panel_div ()">Delete :: Movie</button></center>
+<div id="delete-movies-panel-div"><br>
+
+    <!-- ======================================================================= -->
+    <!-- ======================================================================= -->
+    <!-- ======================================================================= -->
+    <!-- ======================================================================= -->
+    <!-- ======================================================================= -->
+    <center><button class="mujo-admin-btn fontstyles" onclick="Show_delete_a_movies_div_id ()">A</button></center>
+    <div id="delete-a-movies-div-id"><br>
+        <center><button onclick="Fetch_All_Avenue_Edits ('edit_chips_menu_endpoint','chips-delete-tbody','chips-delete-tbody-div')" class="agency-show-btn entries_page_fonts"  >Show</button></center>
+        <div id="chips-delete-tbody-div">
+            <table class=" w3-bordered user-scrolling-table-admin">
+                <center><tbody id="chips-delete-tbody"></tbody></center>
+            </table>
+        </div>
+        <center><br>
+        <form class="order-form" method="POST" enctype="multipart/form-data" action="http://127.0.0.1:6060/delete_chips_menu">
+            <br>
+            <label>Key</label>
+            <input required class="form_input" placeholder="key to delete" name="key" autocomplete="off" type="text"><br>
+
+            <label>Password</label>
+            <input required class="form_input" placeholder="Password" name="pwd" autocomplete="off" type="password"><br>
+
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+        </center>
+    </div><br>
+
+
+    <!-- ======================================================================= -->
+    <!-- ======================================================================= -->
+    <!-- ======================================================================= -->
+    <!-- ======================================================================= -->
+    <!-- ======================================================================= -->
+    <center><button class="mujo-admin-btn fontstyles" onclick="Show_delete_b_movies_div_id ()">B</button></center>
+    <div id="delete-b-movies-div-id"><br>
+        <center><button onclick="Fetch_All_Avenue_Edits ('edit_chips_menu_endpoint','chips-delete-tbody','chips-delete-tbody-div')" class="agency-show-btn entries_page_fonts"  >Show</button></center>
+        <div id="chips-delete-tbody-div">
+            <table class=" w3-bordered user-scrolling-table-admin">
+                <center><tbody id="chips-delete-tbody"></tbody></center>
+            </table>
+        </div>
+        <center><br>
+        <form class="order-form" method="POST" enctype="multipart/form-data" action="http://127.0.0.1:6060/delete_chips_menu">
+            <br>
+            <label>Key</label>
+            <input required class="form_input" placeholder="key to delete" name="key" autocomplete="off" type="text"><br>
+
+            <label>Password</label>
+            <input required class="form_input" placeholder="Password" name="pwd" autocomplete="off" type="password"><br>
+
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+        </center>
+    </div><br>
+
+    <!-- ======================================================================= -->
+    <!-- ======================================================================= -->
+    <!-- ======================================================================= -->
+    <!-- ======================================================================= -->
+    <!-- ======================================================================= -->
+    <center><button class="mujo-admin-btn fontstyles" onclick="Show_delete_c_movies_div_id ()">C</button></center>
+    <div id="delete-c-movies-div-id"><br>
+        <center><button onclick="Fetch_All_Avenue_Edits ('edit_chips_menu_endpoint','chips-delete-tbody','chips-delete-tbody-div')" class="agency-show-btn entries_page_fonts"  >Show</button></center>
+        <div id="chips-delete-tbody-div">
+            <table class=" w3-bordered user-scrolling-table-admin">
+                <center><tbody id="chips-delete-tbody"></tbody></center>
+            </table>
+        </div>
+        <center><br>
+        <form class="order-form" method="POST" enctype="multipart/form-data" action="http://127.0.0.1:6060/delete_chips_menu">
+            <br>
+            <label>Key</label>
+            <input required class="form_input" placeholder="key to delete" name="key" autocomplete="off" type="text"><br>
+
+            <label>Password</label>
+            <input required class="form_input" placeholder="Password" name="pwd" autocomplete="off" type="password"><br>
+
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+        </center>
+    </div><br>
+    </div>
+</div><!-- End main-body div -->
+
+</center>
+</div>
+</body>
+</html>
