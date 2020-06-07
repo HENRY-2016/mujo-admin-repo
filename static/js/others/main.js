@@ -9,7 +9,7 @@ function Load_c_view () {window.location="c.html"}
 function Load_index () {window.location = "index.html"}
 function Load_movie_edits () {window.location = "movieedits.html"}
 function Load_pending_movie () {window.location = "viewpending.html"}
-function Load_finised_movie () {window.location = "finishedmovie.html"}
+function Load_finised_movie () {window.location = "viewfinished.html"}
 function Load_developer () {window.location="developer.html"}
 
 function display_date ()
@@ -125,3 +125,9 @@ function Show_delete_c_movies_div_id ()
     document.getElementById("delete-b-movies-div-id").style.display = "none";
     document.getElementById("delete-c-movies-div-id").style.display = "block";
 } 
+
+function Indexpage_Hide_All_Movies_Divs ()
+{
+    document.getElementById("orders-panel-div").style.display = "none";
+}
+function Show_orders_panel_div (){document.getElementById("orders-panel-div").style.display = "block";}

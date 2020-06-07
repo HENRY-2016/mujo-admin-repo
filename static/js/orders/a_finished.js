@@ -1,8 +1,8 @@
 
 
 
-varpendingurl = "http://192.168.43.140:6060/";
-// var pendingurl = "http://127.0.0.1:6060/";
+var finishedurl = "http://192.168.43.140:6060/";
+// var finishedurl = "http://127.0.0.1:6060/";
 
 
 var seconds = 1000;
@@ -16,18 +16,18 @@ var loader_seconds = 3000;
     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 */
 
-function fetch_chips_orders_received_all_data ()
+function fetch_chips_finished_orders_received_all_data ()
 {
     document.getElementById("chips-orders-received-loader-all").style.display="block";
-    setTimeout(chips_orders_view_all,loader_seconds)
+    setTimeout(chips_finished_orders_view_all,loader_seconds)
 }
 
     // ==================
-function chips_orders_view_all ()
+function chips_finished_orders_view_all ()
     {
         document.getElementById("chips-orders-received-loader-all").style.display="none";
         let req = new XMLHttpRequest();
-        req.open('post',pendingurl+'chips_view_all_orders',true)
+        req.open('post', finishedurl+'chips_finished_view_all_orders',true)
         req.onload = function ()
             {
                 let results = JSON.parse(this.responseText);
@@ -75,16 +75,16 @@ function chips_orders_view_all ()
 
 // ============================= view Today
 
-function fetch_chips_orders_received_date_today_data ()
+function fetch_chips_finished_orders_received_date_today_data ()
 {
     document.getElementById("chips-orders-received-loader-date-today").style.display="block";
-    setTimeout(chips_orders_view_by_date_today,loader_seconds)
+    setTimeout(chips_finished_orders_view_by_date_today,loader_seconds)
 }
-function chips_orders_view_by_date_today ()
+function chips_finished_orders_view_by_date_today ()
 {
     document.getElementById("chips-orders-received-loader-date-today").style.display="none";
     let req = new XMLHttpRequest();
-    req.open('post',pendingurl+'chips_orders_view_by_date_today',true)
+    req.open('post', finishedurl+'chips_finished_orders_view_by_date_today',true)
     req.onload = function ()
         {
             let results = JSON.parse(this.responseText);
@@ -131,16 +131,16 @@ function chips_orders_view_by_date_today ()
 }
 
 // ============================= >>> date date
-function fetch_chips_orders_received_date_date_data ()
+function fetch_chips_finished_orders_received_date_date_data ()
 {
     document.getElementById("chips-orders-received-loader-date-date").style.display="block";
-    setTimeout(chips_orders_view_by_date_date,loader_seconds)
+    setTimeout(chips_finished_orders_view_by_date_date,loader_seconds)
 }
-function chips_orders_view_by_date_date ()
+function chips_finished_orders_view_by_date_date ()
 {
     document.getElementById("chips-orders-received-loader-date-date").style.display="none";
     let req = new XMLHttpRequest();
-    req.open('post',pendingurl+'chips_orders_view_by_date_date',true)
+    req.open('post', finishedurl+'chips_finished_orders_view_by_date_date',true)
     req.onload = function ()
         {
             let results = JSON.parse(this.responseText);
@@ -183,16 +183,16 @@ function chips_orders_view_by_date_date ()
         setTimeout(save_date_date_data,seconds);
 }
 
-function fetch_chips_orders_received_from_to_all_data () 
+function fetch_chips_finished_orders_received_from_to_all_data () 
 {
     document.getElementById("chips-orders-received-loader-from-to-all").style.display="block";
-    setTimeout(chips_orders_from_to_all,loader_seconds)
+    setTimeout(chips_finished_orders_from_to_all,loader_seconds)
 }
-function chips_orders_from_to_all ()
+function chips_finished_orders_from_to_all ()
 {
     document.getElementById("chips-orders-received-loader-from-to-all").style.display="none";
     let req = new XMLHttpRequest();
-    req.open('post',pendingurl+'chips_orders_from_to_all',true)
+    req.open('post', finishedurl+'chips_finished_orders_from_to_all',true)
     req.onload = function ()
         {
             let results = JSON.parse(this.responseText);
@@ -237,17 +237,17 @@ function chips_orders_from_to_all ()
 // ======================================
 
 // +++++++++++++++++++++++++++++++++++++++>>>
-function fetch_chips_orders_received_last_week_all_data ()
+function fetch_chips_finished_orders_received_last_week_all_data ()
 {
     document.getElementById("chips-orders-received-loader-last-week-all").style.display="block";
-    setTimeout(chips_orders_last_week_all,loader_seconds)
+    setTimeout(chips_finished_orders_last_week_all,loader_seconds)
 }
 
-function chips_orders_last_week_all ()
+function chips_finished_orders_last_week_all ()
 {
     document.getElementById("chips-orders-received-loader-last-week-all").style.display="none";
     let req = new XMLHttpRequest();
-    req.open('post',pendingurl+'chips_orders_last_week_all_data',true)
+    req.open('post', finishedurl+'chips_finished_orders_last_week_all_data',true)
     req.onload = function ()
         {
             document.getElementById("chips-orders-received-loader-last-week-all").style.display="none";
@@ -292,17 +292,17 @@ function chips_orders_last_week_all ()
         setTimeout(save_show_last_week_all,seconds);
 }
 
-function fetch_chips_orders_received_this_month_all_data ()
+function fetch_chips_finished_orders_received_this_month_all_data ()
 {
     document.getElementById("chips-orders-received-loader-this-month-all").style.display="block";
-    setTimeout(chips_orders_this_month_all,loader_seconds)
+    setTimeout(chips_finished_orders_this_month_all,loader_seconds)
 }
 
-function chips_orders_this_month_all ()
+function chips_finished_orders_this_month_all ()
 {
     document.getElementById("chips-orders-received-loader-this-month-all").style.display="none";
     let req = new XMLHttpRequest();
-    req.open('post',pendingurl+'chips_orders_this_month_all_data',true)
+    req.open('post', finishedurl+'chips_finished_orders_this_month_all_data',true)
     req.onload = function ()
         {
             let results = JSON.parse(this.responseText);
@@ -357,17 +357,17 @@ function chips_orders_this_month_all ()
 
 // +++++++++++++++++++++++++++++++++++++++>>>
 
-function fetch_chips_orders_received_last_month_all_data ()
+function fetch_chips_finished_orders_received_last_month_all_data ()
 {
     document.getElementById("chips-orders-received-loader-last-month-all").style.display="block";
-    setTimeout(chips_orders_last_month_all,loader_seconds)
+    setTimeout(chips_finished_orders_last_month_all,loader_seconds)
 }
 
-function chips_orders_last_month_all ()
+function chips_finished_orders_last_month_all ()
 {
     document.getElementById("chips-orders-received-loader-last-month-all").style.display="none";
     let req = new XMLHttpRequest();
-    req.open('post',pendingurl+'chips_orders_last_month_all_data',true)
+    req.open('post', finishedurl+'chips_finished_orders_last_month_all_data',true)
     req.onload = function ()
         {
             let results = JSON.parse(this.responseText);
@@ -416,54 +416,54 @@ function chips_orders_last_month_all ()
 function save_show_all_data ()
 {
     let data = document.getElementById ("chips-show-all-tbody").innerHTML;
-    localStorage.setItem("chipsall", data);
+    localStorage.setItem("finishedchipsall", data);
 }
 
 function save_by_date_today_data ()
 {
     let data = document.getElementById ("chips-date-today-tbody").innerHTML;
-    localStorage.setItem("chipsdatetoday", data);
+    localStorage.setItem("finishedchipsdatetoday", data);
 }
 function save_date_date_data ()
 {
     let data = document.getElementById ("chips-date-date-tbody").innerHTML;
-    localStorage.setItem("chipsdatedate", data);
+    localStorage.setItem("finishedchipsdatedate", data);
 }
 
 function save_from_to ()
 {
     let data = document.getElementById("chips-from-to-all-tbody").innerHTML;
-    localStorage.setItem("chipsfromtoall",data);
+    localStorage.setItem("finishedchipsfromtoall",data);
 }
 
 function save_show_last_week_all ()
 {
     let data = document.getElementById ("chips-last-week-all-tbody").innerHTML;
-    localStorage.setItem("chipslstweekall", data);
+    localStorage.setItem("finishedchipslstweekall", data);
 }
 
 function save_show_this_month_all ()
 {
     let data = document.getElementById ("chips-show-all-tbody").innerHTML;
-    localStorage.setItem("chipsdismthall", data);
+    localStorage.setItem("finishedchipsdismthall", data);
 }
 
 function save_show_last_month_all ()
 {
     let data = document.getElementById ("chips-last-month-all-tbody").innerHTML;
-    localStorage.setItem("chipslstmthall", data);
+    localStorage.setItem("finishedchipslstmthall", data);
 }
 
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-function Load_Chips_Offline_Data () 
+function Load_Chips_Finished_Offline_Data () 
 {
-    document.getElementById("chips-show-all-tbody").innerHTML = localStorage.getItem("chipsall");
-    document.getElementById("chips-date-today-tbody").innerHTML = localStorage.getItem("chipsdatetoday");
-    document.getElementById("chips-date-date-tbody").innerHTML = localStorage.getItem("chipsdatedate");
-    document.getElementById("chips-from-to-all-tbody").innerHTML = localStorage.getItem("chipsfromtoall")
-    document.getElementById("chips-last-week-all-tbody").innerHTML = localStorage.getItem("chipslstweekall");
-    document.getElementById("chips-this-month-all-tbody").innerHTML = localStorage.getItem("chipsdismthall");
-    document.getElementById("chips-last-month-all-tbody").innerHTML = localStorage.getItem("chipslstmthall");
+    document.getElementById("chips-show-all-tbody").innerHTML = localStorage.getItem("finishedchipsall");
+    document.getElementById("chips-date-today-tbody").innerHTML = localStorage.getItem("finishedchipsdatetoday");
+    document.getElementById("chips-date-date-tbody").innerHTML = localStorage.getItem("finishedchipsdatedate");
+    document.getElementById("chips-from-to-all-tbody").innerHTML = localStorage.getItem("finishedchipsfromtoall")
+    document.getElementById("chips-last-week-all-tbody").innerHTML = localStorage.getItem("finishedchipslstweekall");
+    document.getElementById("chips-this-month-all-tbody").innerHTML = localStorage.getItem("finishedchipsdismthall");
+    document.getElementById("chips-last-month-all-tbody").innerHTML = localStorage.getItem("finishedchipslstmthall");
 }
 
 

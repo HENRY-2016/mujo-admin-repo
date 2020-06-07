@@ -1,56 +1,123 @@
 
-<html>
-<head>
-<title>MUJO | HOME | ADMIN</title>
-<meta charset="utf-8">
-<!-- <script src="static/js/others/adminedits.js" ></script> -->
-<script src="static/js/others/main.js" ></script>
-<link rel="stylesheet" type="text/css" href="static/css/main.css" >
-<link rel="stylesheet" type="text/css" href="static/css/w3.css">
-</head>
-<body class="main_body">
-<div id="main-header">
-    <div  id= "Navigetion" class="header">
-        <!-- ======= CLOSE ====== -->
-    <span href="javascript:void(0)" class="closebtn" onclick="closeNavi()"><label class="close-navi-span"> &times;</label></span><!-- closs the navi -->
-    <div id="our-movies-menu-label-div"> 
-        <label onclick="Load_index ()" class="our-movies-label" > Home </label>
-    </div><br>
-    <div id="our-movies-menu-label-div"> 
-            <label class="our-movies-label" >Movies</label>
-        </div><br>
-        <div id="menu-items-div">
-            <center>
-                <a><label onclick="Load_a_view ()">Aa</label></a>
-                <a><label onclick="Load_b_view ()">Bb</label></a>
-                <a><label onclick="Load_c_view ()">Cc</label></a>
-            </center>
-        </div>
-        <br>
-        <div id="our-movies-menu-label-div"> 
-            <label class="our-movies-label" onclick="Load_developer ()" > Developer</label>
-        </div><br>
-</div>
-<div id="NaviDiv">
-    <label class="kone-menu-label" onclick="openMenus()">&#9776;</label>
-    <label class="kone-label">Mujo</label>
-</div>
-<script>
-function openMenus(){document.getElementById("Navigetion").style.width = "240px"}
-function closeNavi (){document.getElementById("Navigetion").style.width = "0"}  
-</script>
 
-</div> <!-- main-header-->
-<div id="main-body" > <!-- Begin main-body div -->
-    <br>
-    <center><button class="mujo-main-movies-btns fontstyles" onclick="Load_movie_edits ()">Movies</button></center><br>
-    <center><button class="mujo-main-movies-btns fontstyles" onclick="Load_pending_movie ()">View Pending</button></center><br>
-    <center><button class="mujo-main-movies-btns fontstyles" onclick="Load_finised_movie ()">View Finished</button></center><br>
+
+<html>
+    <head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+    <title> USER | HOME</title>
+    <script src="static/js/others/neworders.js" ></script>
+    <script src="static/js/others/main.js" ></script>
+    
+    <link rel="stylesheet" type="text/css" href="static/css/main.css">
+    <link rel="stylesheet" type="text/css" href="static/css/w3.css">
+    
+    <script>
+    function Init_a_new_orders_div (){Show_a_new_orders_div ();}
+        
+    
+    function NewOrdersLogic (){ Show_orders_panel_div ();}
+    function do_logic ()
+    {
+        // update_a_status_id ();
+        Fetch_Customer_New_Orders ();
+        Indexpage_Hide_All_Movies_Divs ();
+    }
+    </script>
+    </head>
+    <body  class="main_body" onload="do_logic ()">
+    <div id="main-header">
+        <div  id= "Navigetion" class="header">
+            <!-- ======= CLOSE ====== -->
+        <span href="javascript:void(0)" class="closebtn" onclick="closeNavi()"><label class="close-navi-span"> &times;</label></span><!-- closs the navi -->
+        <div id="our-movies-menu-label-div"> 
+            <label onclick="Load_index ()" class="our-movies-label" > Home </label>
+        </div><br>
+        <div id="our-movies-menu-label-div"> 
+                <label class="our-movies-label" >Movies</label>
+            </div><br>
+            <div id="menu-items-div">
+                <center>
+                    <a><label onclick="Load_a_view ()">Aa</label></a>
+                    <a><label onclick="Load_b_view ()">Bb</label></a>
+                    <a><label onclick="Load_c_view ()">Cc</label></a>
+                </center>
+            </div>
+            <br>
+            <div id="our-movies-menu-label-div"> 
+                <label class="our-movies-label" onclick="Load_developer ()" > Developer</label>
+            </div><br>
+    </div>
+    <div id="NaviDiv">
+        <label class="kone-menu-label" onclick="openMenus()">&#9776;</label>
+        <label class="kone-label">Diversity Sounds</label>
+    </div>
+    <script>
+    function openMenus(){document.getElementById("Navigetion").style.width = "240px"}
+    function closeNavi (){document.getElementById("Navigetion").style.width = "0"}  
+    </script>
+    
+    
+    </div> <!-- main-header-->
+    
+    <div id="main-body" > <!-- Begin main-body div -->
+        <br>
+        <center>
+            <table class=" w3-blue status-table">
+                <tr class="table-headings-tr"> <th>Movies</th><th>Orders </th> </tr>
+                <tr class="orders-table-tr"><td class="orders-avenue-td">A</td> <td class="orders-status-td"><span id="a-status-id" class="w3-badge w3-green w3-padding-small">0</span></td></tr>
+                <tr class="orders-table-tr"><td class="orders-avenue-td">B</td> <td class="orders-status-td"><span  id="piloa-status-id" class="w3-badge w3-green w3-padding-small" >0</span></td></tr>
+                <tr class="orders-table-tr"><td class="orders-avenue-td">C</td> <td class="orders-status-td"><span id="chicken-status-id" class="w3-badge w3-green w3-padding-small">0</span></td></tr>
+                
+            </table>
+        </center><br>
+        <center><button class="mujo-main-movies-btns fontstyles" onclick="NewOrdersLogic ()"> New Orders</button></center>
+        <div id="orders-panel-div"><br>
+            <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+            <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+            <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+            <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+            <center> <button class="mujo-admin-btn fontstyles" onclick="Init_a_new_orders_div ()"> A</button></center><br>
+            <div id="a-new-orders-div">
+                <div id="a-view-new-oders-div">
+                    <center>
+                    <table class=" w3-bordered user-scrolling-table">
+                        <tbody id="a-tbody"></tbody>
+                    </table>
+                    </center><br>
+                </div>
+                <center><button class="assign-btn fontstyles" onclick="document.getElementById('id03').style.display='block'"> Assign </button></center> <br>
+                <div id="id03" class="w3-modal">
+                    <div class="w3-modal-content w3-animate-top w3-card-4">
+                        <header class="w3-container w3-teal">
+                            <span onclick="document.getElementById('id03').style.display='none'"
+                            class="w3-button w3-display-topright">&times;</span>
+                            <label class="assign-staff-label">Marking Finished Order</label>
+                        </header>
+                        <div class="w3-container">
+                            <center><br>
+                                <form action="http://192.168.43.140:6060/a_movie_mark_as_finished" method="POST" id="a-assign-form">
+                                    <label for="uname"><b>Number</label><br>
+                                    <input type="text" placeholder="Order No" name="key_num" class="form_input" autocomplete="off" required>
+    
+                                    <label for="uname"><b>Password</label><br>
+                                    <input type="password" placeholder="Your PIN" name="admin_pin" class="form_input" autocomplete="off" required><br>
+    
+                                    <button type="submit" class="submit-btn" > Done</button><br>
+                                </form><br>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
     
-</div><!-- End main-body div -->
-
-</center>
-</div>
-</body>
-</html>
+        </div> <!--End orders-panel-div -->
+        <br>
+        <center><button class="mujo-main-movies-btns fontstyles" onclick="Load_movie_edits ()">Movies</button></center><br>
+        <center><button class="mujo-main-movies-btns fontstyles" onclick="Load_pending_movie ()">View Pending</button></center><br>
+        <center><button class="mujo-main-movies-btns fontstyles" onclick="Load_finised_movie ()">View Finished</button></center><br>
+    
+        </div><br>
+    
+    </body>
+    </html>
